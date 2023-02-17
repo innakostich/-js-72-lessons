@@ -125,22 +125,87 @@
 
 // 4. сделать лог message
 //console.log(message);
-const string = 'JavaScript';
+//const string = 'JavaScript';
 
-const letters = string.split('');
+//const letters = string.split('');
 
-let invertedString = "";
+//let invertedString = "";
 
-console.log (letters);
+//console.log (letters);
 
-for ( const letter of letters) {
-  console.log(letter)
-;
+//for ( const letter of letters) {
+//  console.log(letter)
+//;
 
- if (letter === letter.toLowerCase()) {
-  console.log ('This is small case .', letter);
-  invertedString += letter.toUpperCase();
- }
+// if (letter === letter.toLowerCase()) {
+//  console.log ('This is small case .', letter);
+//  invertedString += letter.toUpperCase();
+// }
 
- console.log( invertedString);
-}
+ //console.log( invertedString);
+//}
+
+// Колбэк-функция
+// Обычное объявление функции
+// Императивный подход
+// Декларативный подход
+
+////TASK 1
+//const categories = document.querySelector("#categories");
+//const items = categories.querySelectorAll(".item");
+
+//console.log(`Number of categories: ${items.length}`);
+
+//items.forEach(item => {
+  //const title = item.querySelector("h2").textContent;
+  //const elements = item.querySelectorAll("li").length;
+//
+  //console.log(`
+//Category: ${title}
+//Elements: ${elements}
+//  `);
+//});
+
+///// TASK 2
+//const ingredients = [
+ // "Potatoes",
+  //"Mushrooms",
+  //"Garlic",
+  //"Tomatos",
+  //"Herbs",
+  //"Condiments",
+//];
+
+//const ingredientsList = document.querySelector("#ingredients");
+//const ingredientsElements = ingredients.map((ingredient) => {
+  //const li = document.createElement("li");
+  //li.textContent = ingredient;
+  //li.classList.add("item");
+  //return li;
+//});
+
+//ingredientsList.append(...ingredientsElements);
+
+
+const list = document.querySelector(".usernames");
+
+// Adds an item to the end of the list
+const lastItem = document.createElement("li");
+lastItem.textContent = "Poly";
+list.append(lastItem);
+
+// Adds an item to the beginning of the list
+const firstItem = document.createElement("li");
+firstItem.textContent = "Ajax";
+list.prepend(firstItem);
+
+// Adds a title before the list
+const title = document.createElement("h2");
+title.textContent = "USERNAMES";
+list.before(title);
+
+// Adds a paragraph after the list
+const text = document.createElement("p");
+text.textContent =
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tenetur assumenda fugiat maxime, soluta aspernatur quasi nihil in asperiores ad distinctio illo et debitis error iure voluptate numquam maiores nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tenetur assumenda fugiat maxime, soluta aspernatur quasi nihil in asperiores ad distinctio illo et debitis error iure voluptate numquam maiores nisi!";
+list.after(text);
