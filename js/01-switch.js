@@ -167,11 +167,26 @@
 //   alert("Descendant click handler");
 // });
 
+  /////////////////////    Running Buttons      ///////////////////////
+// const container = document.querySelector(".container");
+// const hoverHandler = (e) => {
 
-const output = document.querySelector(".output");
-let scrollEventCounter = 0;
+//   const { target: button } = e;
 
-document.addEventListener("scroll", () => {
-  scrollEventCounter += 1;
-  output.textContent = scrollEventCounter;
+//   button.style.top = `${Math.floor (Math.random() * (window.innerHeight - button.clientHeight))}px` ;
+
+//   button.style.left = `${Math.floor (Math.random() * (window.innerWidth - button.clientWidth))}px` ;
+
+ 
+// };
+
+// container.addEventListener ( 'mouseover', hoverHandler) ;
+
+const main = document.querySelector("main");
+
+main.addEventListener ("click", (e) => {
+  const { target } = e ;
+  
+  if ( target.dataset.modal)
+ console.log("click");
 });
