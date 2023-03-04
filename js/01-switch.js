@@ -182,15 +182,48 @@
 
 // container.addEventListener ( 'mouseover', hoverHandler) ;
 
-const main = document.querySelector("main");
+// const main = document.querySelector("main");
 
-main.addEventListener ("click", (e) => {
-  const { target } = e ;
+// main.addEventListener ("click", (e) => {
+//   const { target } = e ;
   
-  if ( target.dataset.modal)
- console.log("click");
+//   if ( target.dataset.modal)
+//  console.log("click");
+// });
+
+// const galleryContainer = document.querySelector(".gallery");
+// const imagesMarkup = createImagesMarkup(galleryItems);
+// galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
+const form = document.querySelector('.feedback-form');
+
+form.addEventListener('input', saveToLocalStorage);
+
+function saveToLocalStorage() {
+  const emailInput = form.querySelector('input[name="email"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+  const feedbackState = { email: emailInput.value, message: messageInput.value };
+  localStorage.setItem('feedback-form-state', JSON.stringify(feedbackState));
+}
+
+window.addEventListener('load', () => {
+  const feedbackState = JSON.parse(localStorage.getItem('feedback-form-state'));
+  const emailInput = form.querySelector('input[name="email"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+  if (feedbackState) {
+    emailInput.value = feedbackState.email;
+    messageInput.value = feedbackState.message;
+  }
 });
 
-const galleryContainer = document.querySelector(".gallery");
-const imagesMarkup = createImagesMarkup(galleryItems);
-galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
+form.addEventListener('submit', submitForm);
+
+function submitForm(event) {
+  event.preventDefault();
+  const emailInput = form.querySelector('input[name="email"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+  const feedbackState = { email: emailInput.value, message: messageInput.value };
+  console.log(feedbackState);
+  localStorage.removeItem('feedback-form-state');
+  emailInput.value = '';
+  messageInput.value = '';
+}
