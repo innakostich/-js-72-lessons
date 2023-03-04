@@ -190,3 +190,7 @@ main.addEventListener ("click", (e) => {
   if ( target.dataset.modal)
  console.log("click");
 });
+
+const galleryContainer = document.querySelector(".gallery");
+const imagesMarkup = createImagesMarkup(galleryItems);
+galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
