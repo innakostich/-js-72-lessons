@@ -194,6 +194,8 @@
 // const galleryContainer = document.querySelector(".gallery");
 // const imagesMarkup = createImagesMarkup(galleryItems);
 // galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
+
+ ///////TASK 3 MODULE *//////////////
 const form = document.querySelector('.feedback-form');
 
 form.addEventListener('input', saveToLocalStorage);
@@ -227,3 +229,4 @@ function submitForm(event) {
   emailInput.value = '';
   messageInput.value = '';
 }
+
