@@ -230,3 +230,119 @@ function submitForm(event) {
   messageInput.value = '';
 }
 
+// import SimpleLightbox from 'simplelightbox';
+// import 'simplelightbox/dist/simple-lightbox.min.css';
+// import { galleryItems } from './gallery-items';
+// // Описаний в документації
+// import SimpleLightbox from "simplelightbox";
+// // Додатковий імпорт стилів
+// import "simplelightbox/dist/simple-lightbox.min.css";
+
+// // Change code below this line
+
+// // const galleryContainer = document.querySelector(".gallery");
+// //  createImagesMarkup(galleryItems);
+// const galleryContainer = document.querySelector(".gallery");
+// const imagesMarkup = createImagesMarkup(galleryItems);
+// galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
+
+// function createImagesMarkup(items) {
+//   return items
+//     .map(({ preview, original, description }) => {
+//       return `<div class="gallery__item">
+//         <a class="gallery__link" href="${original}" >
+//           <img
+//             class="gallery__image"
+//             src="${preview}"
+//             data-source="${original}"
+//             alt="${description}"
+//           />
+//         </a>
+//       </div>`;
+//     })
+//     .join("");
+// }
+
+// const onContainerClick = (e) => {
+//   e.preventDefault();
+
+//   if (e.target.classList.contains("gallery")) return;
+//   const source = e.target.dataset.source;
+
+//   const instance = basicLightbox.create(`
+//     <img src="${source}"width="800" height="600">`);
+
+//   instance.show();
+
+  
+//   document.addEventListener("keydown", onDocumentKeyDown);
+
+
+//   instance.element().addEventListener("keydown", onInstanceKeyDown);
+
+//   function onDocumentKeyDown(e) {
+//     if (e.code === "Escape") {
+//       instance.close();
+//     }
+//   }
+
+//   function onInstanceKeyDown(e) {
+//     if (e.code === "Escape") {
+//       instance.close();
+//     }
+//   }
+// };
+
+// galleryContainer.addEventListener("click", onContainerClick);
+
+
+//////TASK 2 //////
+
+
+
+// const TIME_KEY = 'videoplayer-current-time';
+// const iframe = document.querySelector('iframe');
+// const player = new Player (iframe);
+
+// const onPlay = function (data) {
+//   const strigifyData = JSON.stringify(data);
+//   localStorage.setItem(TIME_KEY, strigifyData);
+// };
+// player.on('timeupdate', throttle(onPlay, 1000));
+
+// function resumePlayback() {
+//   if (JSON.parse(localStorage.getItem(TIME_KEY)) === null) {
+//     return;
+//   }
+//   const paused = JSON.parse(localStorage.getItem(TIME_KEY))['seconds'];
+//   if (paused) {
+//     player
+//       .setCurrentTime(paused)
+//       .then(function (seconds) {})
+//       .catch(function (error) {
+//         switch (error.name) {
+//           case 'Error':
+//             break;
+//           default:
+//             break;
+//         }
+//       });
+//   }
+// }
+// resumePlayback();
+
+// import Vimeo from '@vimeo/player';
+// import throttle from 'lodash.throttle';
+
+// const iframe = document.querySelector('#vimeo-player');
+// const player = new Vimeo(iframe);
+
+// // Initialize player and start tracking timeupdate event
+// player.ready().then(() => {
+//   player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0);
+//   player.on('timeupdate', throttle(() => {
+//     localStorage.setItem('videoplayer-current-time', player.getCurrentTime());
+//   }, 1000));
+// });
+
+
